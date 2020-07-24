@@ -19,11 +19,11 @@ if (isset($_POST['contact_submit'])) {
     }
 
     if (!$name || !$email || !$sub) {
-        header("Location:formError.php");
+        header("Location:index.html?Error:all-fields-required");
         exit();
     }
 
-    $to = "yourmail@gmail.com";
+    $to = "2706ankita@gmail.com";
 
     $subject = "$name via SeePic form : $sub";
 
@@ -41,7 +41,7 @@ if (isset($_POST['contact_submit'])) {
 
     mail($to, $subject, $message, $header);
 
-    header("Location:formSuccess.php");
+    header("Location:index.html?messagesent");
 
  
 }
